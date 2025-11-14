@@ -4,171 +4,229 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Sweetbiscuit44</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="description" content="Sweetbiscuit44: Baking up fast, lovely webpages, automation tools, data fixes and more!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/985/985593.png"/>
   <style>
+    :root {
+      --main-bg: #fff9f3;
+      --accent-bg: #ffebcd;
+      --service-bg: #fdf6ec;
+      --primary: #d2691e;
+      --hover: #a0522d;
+      --button-grad: linear-gradient(135deg, #f4c78e 0%, #e0a96d 50%, #c68642 100%);
+      --button-grad-hover: linear-gradient(135deg, #f6d0a4 0%, #e8b780 50%, #d19a5a 100%);
+      --shadow: 0 4px 8px rgba(198, 134, 66, 0.3);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fff9f3;
+      background: var(--main-bg);
       color: #5a4a42;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+      box-sizing: border-box;
+      transition: background 0.2s;
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background: #ffebcd;
+      padding: 2rem 1rem 1rem;
+      background: var(--accent-bg);
       border-bottom: 2px dashed #d2b48c;
+      position: relative;
+      overflow: hidden;
     }
+    /* Hero animation */
     .biscuit-icon {
-      font-size: 2.5rem;
-      color: #d2691e;
+      font-size: 3.5rem;
+      color: var(--primary);
       margin-bottom: 1rem;
+      animation: biscuit-bounce 1.8s infinite alternate cubic-bezier(.27,.67,.33,.95);
+      display: inline-block;
     }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+    @keyframes biscuit-bounce {
+      to { transform: translateY(-12px) scale(1.1);}
+      from { transform: translateY(4px) scale(0.97);}
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
     .tagline {
-      font-size: 1.2rem;
-      color: #8b5a2b;
+      font-size: 1.25rem;
+      color: var(--hover);
       margin-bottom: 2rem;
+      font-style: italic;
+    }
+    main {
+      max-width: 950px;
+      margin: 2.2rem auto;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+      width: 100%;
     }
     .services {
-      background: #fdf6ec;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      background: var(--service-bg);
+      padding: 2rem 1.5rem;
+      border-radius: 18px;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
       text-align: center;
+      transition: box-shadow 0.2s;
     }
     .services h2 {
       margin-top: 0;
-      color: #a0522d;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
     }
-
+    .services p {
+      font-size: 1.12rem;
+      margin-bottom: 1.6rem;
+    }
     .biscuit-btn {
-      background: linear-gradient(135deg, #f4c78e 0%, #e0a96d 50%, #c68642 100%);
+      background: var(--button-grad);
       color: #fff;
       border: none;
-      padding: 14px 28px;
-      font-size: 1.1rem;
+      padding: 13px 28px;
+      font-size: 1.08rem;
       font-weight: 600;
       border-radius: 50px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow:
-        0 4px 8px rgba(198, 134, 66, 0.3),
-        inset 0 -2px 4px rgba(0,0,0,0.1),
-        inset 0 2px 3px rgba(255,255,255,0.2);
-      font-family: inherit;
-      position: relative;
-      margin: 0.6rem;
+      margin: .5rem;
       display: inline-block;
       text-decoration: none;
+      box-shadow: var(--shadow),inset 0 -2px 4px rgba(0,0,0,0.09),inset 0 2px 3px rgba(255,255,255,0.19);
+      font-family: inherit;
+      position: relative;
       text-align: center;
+      overflow: hidden;
+      transition: background 0.19s, transform 0.2s, box-shadow 0.18s;
     }
-
-    .biscuit-btn:hover {
-      background: linear-gradient(135deg, #f6d0a4 0%, #e8b780 50%, #d19a5a 100%);
-      transform: translateY(-2px);
-      box-shadow:
-        0 6px 12px rgba(198, 134, 66, 0.4),
-        inset 0 -2px 4px rgba(0,0,0,0.15),
-        inset 0 2px 3px rgba(255,255,255,0.3);
-    }
-
-    .biscuit-btn:active {
-      transform: translateY(0);
-      box-shadow:
-        0 2px 4px rgba(198, 134, 66, 0.3),
-        inset 0 -1px 2px rgba(0,0,0,0.1);
-    }
-
     .biscuit-btn::before {
       content: "• • •";
       position: absolute;
-      bottom: 4px;
-      right: 12px;
-      font-size: 8px;
+      bottom: 7px;
+      right: 20px;
+      font-size: 9px;
       color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 3px;
+      letter-spacing: 5px;
+      pointer-events: none;
     }
-
+    .biscuit-btn:hover, .biscuit-btn:focus {
+      background: var(--button-grad-hover);
+      color: #fffdec;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 18px rgba(198,134,66,0.19);
+    }
+    .biscuit-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(198, 134, 66, 0.18),inset 0 -1px 2px rgba(0,0,0,0.08);
+    }
     .projects {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .projects h2 {
-      color: #a0522d;
+      color: var(--primary);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
     }
     .project-list {
       list-style: none;
       padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width:600px) {
+      .project-list {
+        grid-template-columns: 1fr 1fr;
+      }
     }
     .project-list li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0;
+      font-size: 1.03rem;
+      border-left: 5px solid var(--accent-bg);
+      padding-left: 7px;
+      transition: border-color .2s;
     }
     .project-list a {
-      color: #d2691e;
+      color: var(--primary);
       text-decoration: none;
       font-weight: 600;
+      display: inline-block;
+      transition: color 0.16s, background 0.2s;
+      border-radius: 5px;
+      padding: 2px 2px 2px 0;
+      position: relative;
     }
-    .project-list a:hover {
+    .project-list a:hover, .project-list a:focus {
+      color: var(--hover);
+      background: var(--accent-bg);
       text-decoration: underline;
+      outline: none;
+      border-radius: 6px;
+      padding: 2px 7px;
+      left: 0.5px;
     }
     footer {
       text-align: center;
       padding: 1.5rem;
-      color: #8b5a2b;
-      font-size: 0.9rem;
+      color: var(--hover);
+      font-size: 0.93rem;
+      background: var(--service-bg);
+      margin-top: 2rem;
+      border-top: 1px dashed #e0a96d;
+    }
+    /* Accessibility Tweaks */
+    a:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="biscuit-icon">
-      <i class="fas fa-cookie-bite"></i>
+    <div class="biscuit-icon" aria-label="Cookie Icon">
+      <i class="fas fa-cookie-bite" aria-hidden="true"></i>
     </div>
     <h1>Welcome to Sweetbiscuit44!</h1>
     <p class="tagline">...and to our coding pantry! We’re rather busy in the kitchen these days.</p>
   </header>
-
   <main>
     <section class="services">
-      <h2>Our work thats right what we "Bake"</h2>
+      <h2>What We Bake</h2>
       <p>We craft <strong>fast and lovely webpages</strong>, handle <strong>admin work</strong>, build <strong>macros</strong> and <strong>queries</strong>, and solve your <strong>data issues</strong>—all with care and a dash of creativity!</p>
-      
-      <a href="mailto:sweetbiscuit44@gmail.com?subject=Quote Request" class="biscuit-btn" role="button">
+      <a href="mailto:sweetbiscuit44@gmail.com?subject=Quote%20Request" class="biscuit-btn" role="button" aria-label="Email Us for a Quote">
         🍪 Email Us for a Quote
       </a>
-	  
-      
-      <a href="https://paypal.me/sweetbiscuit44" target="_blank" class="biscuit-btn" role="button">
+      <a href="https://paypal.me/sweetbiscuit44" target="_blank" class="biscuit-btn" role="button" aria-label="Support Our Pantry">
         💛 Support Our Pantry
       </a>
     </section>
-
     <section class="projects">
       <h2>Our Work</h2>
       <ul class="project-list">
-        <li><a href="https://sweetbiscuit44-del.github.io/slugify-generator/" target="_blank">Slugify Generator</a></li>
-        <li><a href="https://sweetbiscuit44-del.github.io/what-am-i-cooking/" target="_blank">What Am I Cooking?</a></li>
-        <li><a href="https://sweetbiscuit44-del.github.io/Life-Calculator/" target="_blank">Life Calculator</a></li>
-        <li><a href="https://sweetbiscuit44-del.github.io/raising-Susan/" target="_blank">Raising Susan</a></li>
-        <li><a href="https://sweetbiscuit44-del.github.io/writers-toolbox/" target="_blank">Writer’s Tool Box</a></li>
-        <li><a href="https://sweetbiscuit44-del.github.io/Life-pod-Logbook/" target="_blank">Life Pod Logbook</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/slugify-generator/" target="_blank" title="Slugify Generator">Slugify Generator</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/what-am-i-cooking/" target="_blank" title="What Am I Cooking?">What Am I Cooking?</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/Life-Calculator/" target="_blank" title="Life Calculator">Life Calculator</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/raising-Susan/" target="_blank" title="Raising Susan">Raising Susan</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/writers-toolbox/" target="_blank" title="Writer’s Toolbox">Writer’s Toolbox</a></li>
+        <li><a href="https://sweetbiscuit44-del.github.io/Life-pod-Logbook/" target="_blank" title="Life Pod Logbook">Life Pod Logbook</a></li>
       </ul>
     </section>
   </main>
-
   <footer>
     <p>Made with care by Sweetbiscuit44 &copy; 2025</p>
   </footer>
 </body>
-
 </html>
