@@ -8,151 +8,153 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/985/985593.png"/>
   <style>
-    :root {
-      --main-bg: #fff9f3;
-      --accent-bg: #ffebcd;
-      --service-bg: #fdf6ec;
-      --primary: #d2691e;
-      --hover: #a0522d;
-      --button-grad: linear-gradient(135deg, #f4c78e 0%, #e0a96d 50%, #c68642 100%);
-      --button-grad-hover: linear-gradient(135deg, #f6d0a4 0%, #e8b780 50%, #d19a5a 100%);
-      --shadow: 0 4px 8px rgba(198, 134, 66, 0.3);
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--main-bg);
-      color: #5a4a42;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      background: var(--accent-bg);
-      border-bottom: 2px dashed #d2b48c;
-    }
-    .biscuit-icon {
-      font-size: 3.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      animation: biscuit-bounce 1.8s infinite alternate;
-      display: inline-block;
-    }
-    @keyframes biscuit-bounce {
-      from { transform: translateY(4px) scale(0.97); }
-      to { transform: translateY(-12px) scale(1.1); }
-    }
-    h1 {
-      font-size: 2.3rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-    .tagline {
-      font-size: 1.25rem;
-      color: var(--hover);
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    main {
-      max-width: 950px;
-      margin: 2.2rem auto;
-      padding: 0 1.5rem;
-      box-sizing: border-box;
-      width: 100%;
-    }
-    .services {
-      background: var(--service-bg);
-      padding: 2rem 1.5rem;
-      border-radius: 18px;
-      margin-bottom: 2.5rem;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    .services h2 {
-      margin-top: 0;
-      color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-      font-weight: 700;
-    }
-    .services p {
-      font-size: 1.12rem;
-      margin-bottom: 1.6rem;
-    }
-    .biscuit-btn {
-      background: var(--button-grad);
-      color: #fff;
-      border: none;
-      padding: 13px 28px;
-      font-size: 1.08rem;
-      font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      margin: .5rem;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: var(--shadow);
-      position: relative;
-      transition: 0.2s;
-    }
-    .biscuit-btn:hover {
-      background: var(--button-grad-hover);
-      transform: translateY(-2px) scale(1.03);
-    }
-    .projects h2 {
-      color: var(--primary);
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .project-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width:600px) {
-      .project-list {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .project-list li {
-      border-left: 5px solid var(--accent-bg);
-      padding-left: 12px;
-      text-align: left;
-    }
-    .project-list a {
-      display: block;
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      padding: 4px 6px;
-      border-radius: 6px;
-      transition: 0.16s;
-    }
-    .project-list a:hover {
-      background: var(--accent-bg);
-      color: var(--hover);
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: var(--hover);
-      font-size: 0.93rem;
-      background: var(--service-bg);
-      margin-top: 2rem;
-      border-top: 1px dashed #e0a96d;
-    }
+   :root {
+  --main-bg: #fff9f3;
+  --accent-bg: #ffebcd;
+  --service-bg: #fdf6ec;
+  --primary: #d2691e;
+  --hover: #a0522d;
+  --button-grad: linear-gradient(135deg, #f4c78e 0%, #e0a96d 50%, #c68642 100%);
+  --button-grad-hover: linear-gradient(135deg, #f6d0a4 0%, #e8b780 50%, #d19a5a 100%);
+  --shadow: 0 4px 8px rgba(198, 134, 66, 0.3);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--main-bg);
+  color: #5a4a42;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background: var(--accent-bg);
+  border-bottom: 2px dashed #d2b48c;
+}
+.biscuit-icon {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  animation: biscuit-bounce 1.8s infinite alternate;
+  display: inline-block;
+}
+@keyframes biscuit-bounce {
+  from { transform: translateY(4px) scale(0.97); }
+  to { transform: translateY(-12px) scale(1.1); }
+}
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.tagline {
+  font-size: 1.25rem;
+  color: var(--hover);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+main {
+  max-width: 950px;
+  margin: 2.2rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.services {
+  background: var(--service-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.services h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+.services p {
+  font-size: 1.12rem;
+  margin-bottom: 1.6rem;
+}
+.biscuit-btn {
+  background: var(--button-grad);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: .5rem;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: 0.2s;
+}
+.biscuit-btn:hover {
+  background: var(--button-grad-hover);
+  transform: translateY(-2px) scale(1.03);
+}
+.projects h2 {
+  color: var(--primary);
+  font-size: 1.35rem;
+  margin-top: 2rem;  /* NEW: Creates space above "Our Tools & Creations" */
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width:600px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.project-list li {
+  border-left: 5px solid var(--accent-bg);
+  padding-left: 12px;
+  text-align: left;
+}
+.project-list a {
+  display: block;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: 0.16s;
+}
+.project-list a:hover {
+  background: var(--accent-bg);
+  color: var(--hover);
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--hover);
+  font-size: 0.93rem;
+  background: var(--service-bg);
+  margin-top: 2rem;
+  border-top: 1px dashed #e0a96d;
+}
+
   </style>
 </head>
 <body>
@@ -201,3 +203,4 @@
   </footer>
 </body>
 </html>
+
