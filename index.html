@@ -30,28 +30,26 @@
       line-height: 1.6;
       min-height: 100vh;
       box-sizing: border-box;
-      transition: background 0.2s;
     }
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
       background: var(--accent-bg);
       border-bottom: 2px dashed #d2b48c;
-      position: relative;
-      overflow: hidden;
     }
-    /* Hero animation */
+
     .biscuit-icon {
       font-size: 3.5rem;
       color: var(--primary);
       margin-bottom: 1rem;
-      animation: biscuit-bounce 1.8s infinite alternate cubic-bezier(.27,.67,.33,.95);
+      animation: biscuit-bounce 1.8s infinite alternate;
       display: inline-block;
     }
     @keyframes biscuit-bounce {
-      to { transform: translateY(-12px) scale(1.1);}
-      from { transform: translateY(4px) scale(0.97);}
+      from { transform: translateY(4px) scale(0.97); }
+      to { transform: translateY(-12px) scale(1.1); }
     }
+
     h1 {
       font-size: 2.3rem;
       margin-bottom: 0.5rem;
@@ -64,6 +62,7 @@
       margin-bottom: 2rem;
       font-style: italic;
     }
+
     main {
       max-width: 950px;
       margin: 2.2rem auto;
@@ -71,6 +70,7 @@
       box-sizing: border-box;
       width: 100%;
     }
+
     .services {
       background: var(--service-bg);
       padding: 2rem 1.5rem;
@@ -78,8 +78,8 @@
       margin-bottom: 2.5rem;
       box-shadow: var(--shadow);
       text-align: center;
-      transition: box-shadow 0.2s;
     }
+
     .services h2 {
       margin-top: 0;
       color: var(--primary);
@@ -91,6 +91,7 @@
       font-size: 1.12rem;
       margin-bottom: 1.6rem;
     }
+
     .biscuit-btn {
       background: var(--button-grad);
       color: #fff;
@@ -103,42 +104,22 @@
       margin: .5rem;
       display: inline-block;
       text-decoration: none;
-      box-shadow: var(--shadow),inset 0 -2px 4px rgba(0,0,0,0.09),inset 0 2px 3px rgba(255,255,255,0.19);
-      font-family: inherit;
+      box-shadow: var(--shadow);
       position: relative;
-      text-align: center;
-      overflow: hidden;
-      transition: background 0.19s, transform 0.2s, box-shadow 0.18s;
+      transition: 0.2s;
     }
-    .biscuit-btn::before {
-      content: "• • •";
-      position: absolute;
-      bottom: 7px;
-      right: 20px;
-      font-size: 9px;
-      color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 5px;
-      pointer-events: none;
-    }
-    .biscuit-btn:hover, .biscuit-btn:focus {
+    .biscuit-btn:hover {
       background: var(--button-grad-hover);
-      color: #fffdec;
       transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 8px 18px rgba(198,134,66,0.19);
     }
-    .biscuit-btn:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 4px rgba(198, 134, 66, 0.18),inset 0 -1px 2px rgba(0,0,0,0.08);
-    }
-    .projects {
-      margin-bottom: 2.5rem;
-    }
+
     .projects h2 {
       color: var(--primary);
       font-size: 1.35rem;
       margin-bottom: 1rem;
       font-weight: 700;
     }
+
     .project-list {
       list-style: none;
       padding: 0;
@@ -152,51 +133,29 @@
         grid-template-columns: 1fr 1fr;
       }
     }
+
     .project-list li {
-      margin-bottom: 0;
-      font-size: 1.03rem;
       border-left: 5px solid var(--accent-bg);
-      /* Changed padding-left to 15px to account for the border + small space */
-      padding-left: 15px; 
-      transition: border-color .2s;
-      /* Ensure text wraps correctly without affecting border */
-      text-align: left; 
+      padding-left: 12px;
+      text-align: left;
     }
+
     .project-list a {
+      display: block;
       color: var(--primary);
-      text-decoration: none;
       font-weight: 600;
-      /* Changed to block to allow full width interaction and proper alignment */
-      display: block; 
-      transition: color 0.16s, background 0.2s;
-      border-radius: 5px;
-      padding: 2px 2px 2px 0;
-      position: relative;
-    }
-    /* Adding padding to the link content for alignment */
-    .project-list a span {
-        display: inline-block;
-        padding-left: 0;
-    }
-    .project-list a:hover, .project-list a:focus {
-      color: var(--hover);
-      background: var(--accent-bg);
-      text-decoration: underline;
-      outline: none;
+      text-decoration: none;
+      padding: 4px 6px;
       border-radius: 6px;
-      padding: 2px 7px;
-      left: 0.5px;
+      transition: 0.16s;
     }
-    /* FIX: Ensure the li border is not affected by link padding changes */
+
     .project-list a:hover {
-        padding: 2px 0; 
-        text-decoration: none;
+      background: var(--accent-bg);
+      color: var(--hover);
+      text-decoration: underline;
     }
-    .project-list a:hover span {
-        padding: 2px 7px;
-        background: var(--accent-bg);
-        border-radius: 6px;
-    }
+
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -206,17 +165,12 @@
       margin-top: 2rem;
       border-top: 1px dashed #e0a96d;
     }
-    /* Accessibility Tweaks */
-    a:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="biscuit-icon" aria-label="Cookie Icon">
-      <i class="fas fa-cookie-bite" aria-hidden="true"></i>
+    <div class="biscuit-icon">
+      <i class="fas fa-cookie-bite"></i>
     </div>
     <h1>Welcome to Sweetbiscuit44!</h1>
     <p class="tagline">...and to our coding pantry! We’re rather busy in the kitchen these days.</p>
@@ -225,12 +179,16 @@
   <main>
     <section class="services">
       <h2>What We Bake</h2>
-      <p>We craft **<strong>fast and lovely webpages</strong>**, handle **<strong>admin work</strong>**, build **<strong>macros</strong>** and **<strong>queries</strong>**, and solve your **<strong>data issues</strong>**—all with care and a dash of creativity!</p>
+      <p>
+        We craft <strong>fast and lovely webpages</strong>, handle <strong>admin work</strong>,
+        build <strong>macros</strong> and <strong>queries</strong>, and solve your 
+        <strong>data issues</strong> — all with care and a dash of creativity!
+      </p>
       
-      <a href="mailto:sweetbiscuit44@gmail.com?subject=Quote%20Request" class="biscuit-btn" role="button" aria-label="Email Us for a Quote">
+      <a href="mailto:sweetbiscuit44@gmail.com?subject=Quote%20Request" class="biscuit-btn">
         🍪 Email Us for a Quote
       </a>
-      <a href="https://paypal.me/sweetbiscuit44" target="_blank" class="biscuit-btn" role="button" aria-label="Support Our Pantry">
+      <a href="https://paypal.me/sweetbiscuit44" target="_blank" class="biscuit-btn">
         💛 Support Our Pantry
       </a>
     
@@ -238,19 +196,19 @@
         <h2>Our Tools & Creations</h2>
         
         <ul class="project-list">
-          <li><a href="https://sweetbiscuit44-del.github.io/sound-viz/" target="_blank"><span>🍪 Simple Sound Visualizer 🎶</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/biscuit-calculator/" target="_blank"><span>🍪 Biscuit Calculator</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/writers-toolbox/" target="_blank"><span>🍪 Writer’s Toolbox</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/what-am-i-cooking/" target="_blank"><span>🍪 What Am I Cooking? (Recipe Generator)</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/slugify-generator/" target="_blank"><span>🍪 Slugify Generator</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/Life-Calculator/" target="_blank"><span>🍪 Life Calculator (Sleep Tracker)</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/Life-pod-Logbook/" target="_blank"><span>🍪 Life Pod Logbook (Secure Diary)</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/message-crumbs/" target="_blank"><span>🍪 Message Crumbs (Notes/List)</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/peaceful-garden/" target="_blank"><span>🍪 Peaceful Garden (Virtual Yard)</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/puters-fun-pad/" target="_blank"><span>🍪 Puter's Fun Pad</span></a></li>
-          <li><a href="https://sweetbiscuit44-del.github.io/raising-Susan/" target="_blank"><span>🍪 Raising Susan (Life Sim Game)</span></a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/sound-viz/" target="_blank">🍪 Simple Sound Visualizer 🎶</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/biscuit-calculator/" target="_blank">🍪 Biscuit Calculator</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/writers-toolbox/" target="_blank">🍪 Writer’s Toolbox</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/what-am-i-cooking/" target="_blank">🍪 What Am I Cooking?</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/slugify-generator/" target="_blank">🍪 Slugify Generator</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/Life-Calculator/" target="_blank">🍪 Life Calculator (Sleep Tracker)</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/Life-pod-Logbook/" target="_blank">🍪 Life Pod Logbook</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/message-crumbs/" target="_blank">🍪 Message Crumbs</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/peaceful-garden/" target="_blank">🍪 Peaceful Garden</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/puters-fun-pad/" target="_blank">🍪 Puter's Fun Pad</a></li>
+          <li><a href="https://sweetbiscuit44-del.github.io/raising-Susan/" target="_blank">🍪 Raising Susan (Life Sim)</a></li>
         </ul>
-        
+
         <p style="text-align:center; color:#a56613; margin-top:1em;">Check back soon for more fresh bakes!</p>
       </section>
     </section>
